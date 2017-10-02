@@ -15,3 +15,13 @@ Please find the webserver-client documentation from the link below.
 Here is the simple example:
 
 [mysocket.ipynb](https://github.com/SelinGungor/Fall2017Swe573/blob/master/mysocket.ipynb)
+
+### Week 2
+Welcome to SingleYou!
+
+[Project plan is prepared](https://github.com/SelinGungor/Fall2017Swe573/wiki/Project-Plan)
+
+[Time estimations are given](https://github.com/SelinGungor/Fall2017Swe573/wiki/Time-estimations)
+
+[Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
+
