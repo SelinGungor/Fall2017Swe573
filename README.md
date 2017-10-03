@@ -25,3 +25,6 @@ Welcome to SingleYou!
 
 [Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
 
+### Week 3
+
+[Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
