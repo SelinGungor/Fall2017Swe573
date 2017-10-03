@@ -23,7 +23,7 @@ Welcome to SingleYou!
 
 [Time estimations are given](https://github.com/SelinGungor/Fall2017Swe573/wiki/Time-estimations)
 
-[Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
+[deprecated][Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements-%5Bdeprecated%5D)
 
 ### Week 3
 
