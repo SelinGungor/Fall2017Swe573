@@ -26,5 +26,6 @@ Welcome to SingleYou!
 [deprecated][Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements-%5Bdeprecated%5D)
 
 ### Week 3
+Welcome to DeepYou!
 
 [Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
