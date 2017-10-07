@@ -29,3 +29,5 @@ Welcome to SingleYou!
 Welcome to DeepYou!
 
 [Requirements are defined](https://github.com/SelinGungor/Fall2017Swe573/wiki/Requirements)
+[Mockups are created](https://github.com/SelinGungor/Fall2017Swe573/wiki/Mockups)
+[Use case diagram is created](https://github.com/SelinGungor/Fall2017Swe573/wiki/Use-case-diagram-of-DeepYou)
