@@ -33,3 +33,14 @@ Welcome to DeepYou!
 [Mockups are created](https://github.com/SelinGungor/Fall2017Swe573/wiki/Mockups)
 
 [Use case diagram is created](https://github.com/SelinGungor/Fall2017Swe573/wiki/Use-case-diagram-of-DeepYou)
+
+
+### Week 4 
+
+Twitter app created.
+Getting data from twitter api
+Build model
+Train model
+Feed model with twitter api
+Sentiment analysis pos or neg
+Show in basic graph
