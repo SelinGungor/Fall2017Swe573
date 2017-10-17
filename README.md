@@ -37,10 +37,10 @@ Welcome to DeepYou!
 
 ### Week 4 
 
-Twitter app created.
-Getting data from twitter api
-Build model
-Train model
-Feed model with twitter api
-Sentiment analysis pos or neg
-Show in basic graph
+Twitter app created.  
+Getting data from twitter api  
+Build model  
+Train model  
+Feed model with twitter api  
+Sentiment analysis pos or neg  
+Show in basic graph  
