@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Hello! This is Selin, the sailor and an engineer!
+Hello! This is Selin, the sailor and the engineer!
 
 I created this repository for Fall 2017 Swe573 course form Bogazici University
 
