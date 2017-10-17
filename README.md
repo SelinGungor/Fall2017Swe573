@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Hello! This is Selin, the sailor and pole dancer!
+Hello! This is Selin, the sailor and engineer!
 
 I created this repository for Fall 2017 Swe573 course form Bogazici University
 
