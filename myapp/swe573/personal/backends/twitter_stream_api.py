@@ -7,8 +7,8 @@ import json
 import sentiment_mod as s
 
 #consumerkey, consumersecret #https://apps.twitter.com/ #deepyou
-csecret = 'v5EMSTBikvQv2xS5wBHWqlCBt4oz7VmmVPqDs1Q8mDRuK6cA7g'
-ckey = 'gtAuPM2P4Xe5iqw5h0z4ZhmtY'
+csecret = 'VH8mYzkEvPEqGNlZTZnFnq3WS1aO0VpVQWwq1mHNz9T82lUwEw'
+ckey = 'AoxuI3HzTsLzjVSdqfFHKMWCo'
 atoken = '747662208-qTHmkAmDK5SzV5cN4dh80JkjaRYerUcbQIrdpYqe'
 asecret = '8GHntLvtP88Yz7rsflSAz6cUHbSX1imeGQJXC6b1qzlXH'
 
