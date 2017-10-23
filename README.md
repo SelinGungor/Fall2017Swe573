@@ -44,3 +44,9 @@ Train model
 Feed model with twitter api  
 Sentiment analysis pos or neg  
 Show in basic graph  
+
+### Week 5 
+* Twitter login
+* Datepicker investigation
+* Non-functional requirements are updated
+* UI improvements
