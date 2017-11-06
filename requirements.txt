@@ -4,6 +4,6 @@ psycopg2
 django-crispy-forms
 django-ckeditor
 typing
-ntlk
+nltk==3.2.5
 tweepy
 matplotlib
