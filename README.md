@@ -59,3 +59,9 @@ UI improvements
 Explanation movie:   
 * https://www.useloom.com/share/24283b9e30ab424db21d540d3401bd52
 
+### Week 6 
+Fixes in ntlk side
+DigitalOcean account is created
+DockerFile i configured
+Deployment process is planned
+
