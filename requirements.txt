@@ -1,0 +1,9 @@
+Django==1.11.5
+djangorestframework==3.6.2
+psycopg2
+django-crispy-forms
+django-ckeditor
+typing
+ntlk
+tweepy
+matplotlib
