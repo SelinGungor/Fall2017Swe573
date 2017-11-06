@@ -1,12 +1,29 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="static css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <script src="static js/bootstrap.js"></script>
+    {{ form.media }}
+
     <div class="row">
+
             <div class="col-md-120">
     <meta charset="UTF-8">
     <title>Welcome to home</title>
     <h2>Homepage</h2>
     <p>Hello {{ user.username }}!</p>
     <p><a href="/logout">Logout</a>
-       </div> </div>
+
+<form method='POST' action='/select_dates/'>
+    {% csrf_token %}
+    <input type='hidden' value='{{ r.id }}' name='id'>
+    <input type="submit" name='prepair_comment' value="Analyse!">
+</form>
+
+
+</div>
+</div>
 {% endblock %}

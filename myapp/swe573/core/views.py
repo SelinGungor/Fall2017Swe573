@@ -3,6 +3,10 @@ from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeFor
 from django.contrib.auth import update_session_auth_hash, login, authenticate
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+
 
 from social_django.models import UserSocialAuth
 
@@ -70,3 +74,20 @@ def password(request):
     else:
         form = PasswordForm(request.user)
     return render(request, 'core/password.html', {'form': form})
+
+
+def getUser(request):
+    if request.method == 'POST':
+        current_user = request.user
+        print(current_user.id)
+    return current_user
+
+# def make_comment(request):
+#     if request.method == 'POST':
+#         if 'prepair_comment' in request.POST:
+#             review = get_object_or_404(Review, pk=request.POST.get('id'))
+#             form = CommentForm({'review': review.id})
+#             return render(request, 'stamped/comment.html', {
+#                 'form': form,
+#                 })
+#         else: # save the comment
