@@ -7,4 +7,4 @@ typing
 nltk==3.2.5
 tweepy
 matplotlib
-social_django
+social-auth-app-django
