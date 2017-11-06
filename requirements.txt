@@ -8,3 +8,4 @@ nltk==3.2.5
 tweepy
 matplotlib
 social-auth-app-django
+django-bootstrap3-datetimepicker
