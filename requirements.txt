@@ -9,3 +9,4 @@ tweepy
 matplotlib
 social-auth-app-django
 django-bootstrap3-datetimepicker
+matplotlib
