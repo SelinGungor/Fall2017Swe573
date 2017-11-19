@@ -3,8 +3,7 @@ import pickle
 from nltk.classify import ClassifierI
 from statistics import mode
 from nltk.tokenize import word_tokenize
-
-
+import statistics
 
 class VoteClassifier(ClassifierI):
     def __init__(self, *classifiers):
@@ -15,7 +14,7 @@ class VoteClassifier(ClassifierI):
         for c in self._classifiers:
             v = c.classify(features)
             votes.append(v)
-        return mode(votes)
+        return self.get_mode(votes)
 
     def confidence(self, features):
         votes = []
@@ -23,10 +22,19 @@ class VoteClassifier(ClassifierI):
             v = c.classify(features)
             votes.append(v)
 
-        choice_votes = votes.count(mode(votes))
+        choice_votes = votes.count(self.get_mode(votes))
         conf = choice_votes / len(votes)
         return conf
 
+    def get_mode(self, votes):
+        try:
+            print("The Mode = ", statistics.mode(votes))
+            mode = statistics.mode(votes)
+        except statistics.StatisticsError as e:
+            print("There was an error with the statistics module")
+            print(e)
+            mode = max(set(votes), key=votes.count)
+        return mode
 
 documents_f = open("pickled_algos_emotions/documents.pickle", "rb")
 documents = pickle.load(documents_f)
