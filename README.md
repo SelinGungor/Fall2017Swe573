@@ -66,8 +66,8 @@ DockerFile i configured
 Deployment process is planned  
 
 ### Week 8
-Emotional Data investigation is done.
-Emotional data set is created.
-Model can be trained with emotional data.
-Sentimental analysis is implemented to the user's tweets history
-Graph is shown based on emotions
+Emotional Data investigation is done.  
+Emotional data set is created.  
+Model can be trained with emotional data.  
+Sentimental analysis is implemented to the user's tweets history  
+Graph is shown based on emotions  
