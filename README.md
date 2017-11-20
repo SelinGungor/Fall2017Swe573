@@ -74,3 +74,4 @@ Emotional data set is created.
 Model can be trained with emotional data.  
 Sentimental analysis is implemented to the user's tweets history  
 Graph is shown based on emotions using matplotlib 
+*  https://www.useloom.com/share/138299710c044aab9671a6d1fb28ba20
