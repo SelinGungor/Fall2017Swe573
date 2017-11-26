@@ -2,32 +2,56 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm, UserCreationForm
 from django.contrib.auth import update_session_auth_hash, login, authenticate
 from django.contrib import messages
-from django.shortcuts import render, redirect
-from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
-
-
+from django.views.generic import TemplateView
+from django.shortcuts import render, reverse, get_object_or_404, HttpResponseRedirect, redirect, Http404
+from core.forms import HomeForm
 from social_django.models import UserSocialAuth
+from core.models import Post
+# def signup(request):
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             user = authenticate(
+#                 username=form.cleaned_data.get('username'),
+#                 password=form.cleaned_data.get('password1')
+#             )
+#             login(request, user)
+#             return redirect('home')
+#     else:
+#         form = UserCreationForm()
+#     return render(request, 'registration/signup.html', {'form': form})
 
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = authenticate(
-                username=form.cleaned_data.get('username'),
-                password=form.cleaned_data.get('password1')
-            )
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+
+template_name = 'core/home.html'
+
 
 @login_required
 def home(request):
-    return render(request, 'core/home.html')
+    form = HomeForm()
+    return render(request, template_name, {'form': form})
+
+
+@login_required
+def post_create(request):
+    form = HomeForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        Post.objects.all().delete()
+        post = form.save(commit=False)
+        post.user = request.user
+        post.save()
+        messages.success(request, 'Success.')
+        return HttpResponseRedirect(post.get_absolute_url())
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'core/home.html', context)
+
+# @login_required
+# def home(request):
+#     return render(request, 'core/home.html')
+
 
 @login_required
 def settings(request):
@@ -81,13 +105,3 @@ def getUser(request):
         current_user = request.user
         print(current_user.id)
     return current_user
-
-# def make_comment(request):
-#     if request.method == 'POST':
-#         if 'prepair_comment' in request.POST:
-#             review = get_object_or_404(Review, pk=request.POST.get('id'))
-#             form = CommentForm({'review': review.id})
-#             return render(request, 'stamped/comment.html', {
-#                 'form': form,
-#                 })
-#         else: # save the comment

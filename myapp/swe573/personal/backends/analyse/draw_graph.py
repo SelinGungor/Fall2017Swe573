@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import personal.backends.analyse.sentiment_analysis as s
+from swe573 import settings
 
 class DrawGraph(object):
     def __init__(self, tweets):
@@ -23,12 +24,14 @@ class DrawGraph(object):
 
     def showGraph(self, emos):
         print(emos)
+        fig = plt.figure()
         plt.title('DeepYou - Twitter Sentimental Profiling')
         plt.xlabel('Emotions')
         plt.ylabel('Number of Tweets')
         plt.bar(range(len(emos)), emos.values(), align='center',color='r')
         plt.xticks(range(len(emos)), emos.keys())
-        plt.show()
+        fig.savefig(settings.BASE_DIR + settings.STATIC_URL + '/deepyou.png')  # Use fig. here
+        #plt.show(block=True)
 
 # my_tweets = ["I am so bored","I am worried about you","I hope I can wake up early tomorrow","I feel so good. Let's party!","I am so bored","I am worried about you","I hope I can wake up early tomorrow","I feel so good. Let's party!","I am so bored","I am so bored","I am so bored","I am so bored","I am so bored"]
 # graph = DrawGraph(my_tweets)

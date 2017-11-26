@@ -17,7 +17,40 @@ asecret = '8GHntLvtP88Yz7rsflSAz6cUHbSX1imeGQJXC6b1qzlXH'
 # conn = MySQLdb.connect("selingungor.mysql.pythonanywhere-services.com", "selingungor", "MyDeepYouP@ss", "selingungor$deepyou")
 # connection = conn.cursor()
 
-class listener(tweepy.StreamListener):
+
+class DeepYou(object):
+    def __init__(self, username):
+        self.username = username
+
+    def give_analyse_result(self):
+        auth = tweepy.OAuthHandler(ckey, csecret)
+        auth.set_access_token(atoken, asecret)
+
+        # twitterStream = tweepy.Stream(auth, listener())
+        # my_tweets = twitterStream.filter(track=["a"], languages=["en"])
+        emoemo = {}
+        api = tweepy.API(auth)
+        #get my tweets
+        try:
+            my_tweet_list = []
+            for status in tweepy.Cursor(api.user_timeline, screen_name=self.username).items():
+                my_tweets = status._json['text']
+                my_tweet_list.append(my_tweets)
+                out = open('verizon_twitter_data.txt', 'a+')
+                my_tweets = my_tweets.encode('utf-8')
+                out.write(str(my_tweets) + "\n")
+            result = Result(my_tweet_list)
+            my_emotions = result.analyse_emotions()
+                #print(my_tweet_list + " - " + my_emotions)
+            emoemo[list(my_emotions.keys())[0]] = list(my_emotions.values())
+        except KeyError:
+            print("key error!!!!!!!!!!")
+        print(my_emotions)
+        result.show_graph(my_emotions)
+
+
+
+class Listener(tweepy.StreamListener):
     def on_data(self, data):
         try:
             all_data = json.loads(data)
@@ -60,28 +93,9 @@ class Result(object):
         #graph = gr.DrawGraph(self.tweets)
         self.graph.showGraph(emos)
 
-auth = tweepy.OAuthHandler(ckey, csecret)
-auth.set_access_token(atoken, asecret)
 
-# twitterStream = tweepy.Stream(auth, listener())
-# my_tweets = twitterStream.filter(track=["a"], languages=["en"])
+#giveAnalyseResult('@erolstt') #if you uncomment this line, analyzing emotions will start when you execute app from terminal, please uncomment it just for testinf purposes
 
-api = tweepy.API(auth)
-#get my tweets
-try:
-    for status in tweepy.Cursor(api.user_timeline, screen_name='@SelinGungr').items():
-        my_tweets = status._json['text']
-        my_tweet_list = []
-        my_tweet_list.append(my_tweets)
-        out = open('verizon_twitter_data.txt', 'a+')
-        my_tweets = my_tweets.encode('utf-8')
-        out.write(str(my_tweets) + "\n")
-        print(my_tweet_list)
-        result = Result(my_tweet_list)
-        my_emotions = result.analyse_emotions()
-except KeyError:
-    print("key error!!!!!!!!!!")
-result.show_graph(my_emotions)
 
 # import matplotlib.pyplot as plt
 # def showGraph(emos):

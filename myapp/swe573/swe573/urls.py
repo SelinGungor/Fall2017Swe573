@@ -17,15 +17,18 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from core import views as core_views
+from personal import views as personal_views
 
 urlpatterns = [
-    url(r'^$', core_views.home, name='home'),
+    #url(r'^core/', include('core.urls')),
+    url(r'^$', core_views.post_create, name='home'),
+    #url(r'^$', core_views.home, name='home'),
+    url(r'^oauth/', include('social_django.urls', namespace='social')), #important for twitter login
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
-    url(r'^signup/$', core_views.signup, name='signup'),
+    #url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^settings/$', core_views.settings, name='settings'),
     url(r'^settings/password/$', core_views.password, name='password'),
-    url(r'^oauth/', include('social_django.urls', namespace='social')), #important
     url(r'^admin/', admin.site.urls),
     url(r'^personal/', include('personal.urls')),
     url(r'^blog/', include('blog.urls')),

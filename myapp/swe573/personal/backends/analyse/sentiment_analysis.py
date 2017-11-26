@@ -4,6 +4,7 @@ from nltk.classify import ClassifierI
 from statistics import mode
 from nltk.tokenize import word_tokenize
 import statistics
+import os
 
 class VoteClassifier(ClassifierI):
     def __init__(self, *classifiers):
@@ -35,6 +36,7 @@ class VoteClassifier(ClassifierI):
             print(e)
             mode = max(set(votes), key=votes.count)
         return mode
+
 
 documents_f = open("pickled_algos_emotions/documents.pickle", "rb")
 documents = pickle.load(documents_f)

@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+ALGO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -39,7 +39,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core',
-    'social_django',
     'blog',
     'personal',
     'django.contrib.admin',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap3_datepicker',
     'datetimewidget',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'swe573.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'templates'),],    #???? buna bak  PROJECT_DIR.child('templates'),],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates'), os.path.join(ALGO_DIR, 'pickled_algos_emotions')],    #???? buna bak  PROJECT_DIR.child('templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

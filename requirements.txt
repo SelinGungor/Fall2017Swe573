@@ -10,3 +10,4 @@ matplotlib
 social-auth-app-django
 django-bootstrap3-datetimepicker
 matplotlib
+ipdb=0.10.3
