@@ -80,3 +80,4 @@ Graph is shown based on emotions using matplotlib
 ### Week 9  
 Emotional data is shown on graph on web browser  
 Datepicker is implemented
+Project preperation for deployment
