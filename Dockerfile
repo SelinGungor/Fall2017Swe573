@@ -1,12 +1,8 @@
-FROM python:3.6
+COPY requirements.txt /tmp/
+RUN pip install --requirement /tmp/requirements.txt
+COPY . /tmp/
 
 RUN git clone https://github.com/SelinGungor/Fall2017Swe573.git
-
-COPY requirements.txt /Fall2017Swe573
-
-WORKDIR /Fall2017Swe573
-
-RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8000
 
