@@ -1,7 +1,7 @@
 import random
 import pickle
 from nltk.classify import ClassifierI
-from statistics import mode
+from django.templatetags.static import static
 from nltk.tokenize import word_tokenize
 import statistics
 import os
@@ -38,7 +38,8 @@ class VoteClassifier(ClassifierI):
         return mode
 
 
-documents_f = open("pickled_algos_emotions/documents.pickle", "rb")
+url = static('personal/pickled_algos_emotions/documents.pickle')
+documents_f = open(url, "rb")
 documents = pickle.load(documents_f)
 documents_f.close()
 
