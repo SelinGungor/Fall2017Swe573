@@ -5,6 +5,10 @@ import swe573.settings as stg
 from nltk.tokenize import word_tokenize
 import statistics
 import os
+import nltk
+
+nltk.download('punkt')
+
 
 class VoteClassifier(ClassifierI):
     def __init__(self, *classifiers):
