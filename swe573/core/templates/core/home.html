@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{{ form.media }}
+    <div class="row">
+
+            <div class="col-md-120">
+    <meta charset="UTF-8">
+    <title>Welcome to home</title>
+    <h2>Homepage</h2>
+    <p>Hello {{ user.username }}!</p>
+    <p><a href="/logout">Logout</a>
+
+<form method="POST" enctype="application/x-www-form-urlencoded">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.media }}
+    {{ name_form.name.label_tag }}
+    {{ name_form.name }}
+    {{ name_form.name.errors }}
+    <button type="submit">Analyse</button>
+     <img src="img/hearts.svg" width=“40" alt="">
+</form>
+                <div class="col-md-120">
+    {% for post in posts %}
+                <p>From: {{ post.start_date|date:"M d, Y" }}</p>
+                <p>To: {{ post.end_date|date:"M d, Y" }}</p>
+    {% endfor %}
+<img src="{{deep_you}}" width="600" height="450" title="Your twitter sentimental profiling graph">
+                </div>
+</div>
+</div>
+{% endblock %}
