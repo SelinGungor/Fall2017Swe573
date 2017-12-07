@@ -1,7 +1,8 @@
+Django==1.11.7
+tweepy==3.5.0
 sshtunnel==0.1.2
 social_auth_app_django==1.2.0
-tweepy==3.5.0
+pytest==3.3.0
 matplotlib==2.0.2
 nltk==3.2.5
-Django==1.11.7
 scikit_learn==0.19.1
