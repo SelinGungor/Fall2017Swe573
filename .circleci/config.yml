@@ -39,11 +39,12 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
+      # run tests!
       - run:
-          name: Start Selenium
+          name: run tests
           command: |
-          . venv/bin/activate
-          pytest
+            . venv/bin/activate
+            pytest
 
       - store_artifacts:
           path: test-reports
