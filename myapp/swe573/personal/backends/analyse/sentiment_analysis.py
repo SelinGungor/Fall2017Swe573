@@ -38,7 +38,7 @@ class VoteClassifier(ClassifierI):
         return mode
 
 
-url = stg.settings.STATICFILES_DIRS + 'personal/pickled_algos_emotions/documents.pickle'
+url = os.path.join(stg.STATICFILES_DIRS[0], 'personal/pickled_algos_emotions/documents.pickle')
 documents_f = open(url, "rb")
 documents = pickle.load(documents_f)
 documents_f.close()
