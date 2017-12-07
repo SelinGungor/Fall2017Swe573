@@ -6,3 +6,4 @@ social_auth_app_django==1.2.0
 sshtunnel==0.1.2
 matplotlib==2.0.2
 scikit_learn==0.19.1
+scipy
