@@ -44,7 +44,8 @@ documents = pickle.load(documents_f)
 documents_f.close()
 
 
-word_features5k_f = open("pickled_algos_emotions/word_features5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/word_features5k.pickle')
+word_features5k_f = open(url, "rb")
 word_features = pickle.load(word_features5k_f)
 word_features5k_f.close()
 
@@ -57,8 +58,8 @@ def find_features(document):
 
     return features
 
-
-featuresets_f = open("pickled_algos_emotions/featuresets.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/featuresets.pickle')
+featuresets_f = open(url, "rb")
 featuresets = pickle.load(featuresets_f)
 featuresets_f.close()
 
@@ -69,34 +70,35 @@ testing_set = featuresets[5000:]
 training_set = featuresets[:5000]
 
 
-
-open_file = open("pickled_algos_emotions/originalnaivebayes5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/originalnaivebayes5k.pickle')
+open_file = open(url, "rb")
 classifier = pickle.load(open_file)
 open_file.close()
 
-
-open_file = open("pickled_algos_emotions/MNB_classifier5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/MNB_classifier5k.pickle')
+open_file = open(url, "rb")
 MNB_classifier = pickle.load(open_file)
 open_file.close()
 
 
-
-open_file = open("pickled_algos_emotions/BernoulliNB_classifier5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/BernoulliNB_classifier5k.pickle')
+open_file = open(url, "rb")
 BernoulliNB_classifier = pickle.load(open_file)
 open_file.close()
 
-
-open_file = open("pickled_algos_emotions/LogisticRegression_classifier5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/LogisticRegression_classifier5k.pickle')
+open_file = open(url, "rb")
 LogisticRegression_classifier = pickle.load(open_file)
 open_file.close()
 
-
-open_file = open("pickled_algos_emotions/LinearSVC_classifier5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/LinearSVC_classifier5k.pickle')
+open_file = open(url, "rb")
 LinearSVC_classifier = pickle.load(open_file)
 open_file.close()
 
 
-open_file = open("pickled_algos_emotions/SGDC_classifier5k.pickle", "rb")
+url = os.path.join(stg.STATICFILES_DIRS[0], 'pickled_algos_emotions/SGDC_classifier5k.pickle')
+open_file = open(url, "rb")
 SGDC_classifier = pickle.load(open_file)
 open_file.close()
 
