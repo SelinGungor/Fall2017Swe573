@@ -41,8 +41,10 @@ jobs:
 
       - run:
           name: Start Selenium
-          command: | pytest
-          
+          command: |
+          . venv/bin/activate
+          pytest
+
       - store_artifacts:
           path: test-reports
           destination: test-reports
