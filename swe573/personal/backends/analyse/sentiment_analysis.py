@@ -29,7 +29,7 @@ class VoteClassifier(ClassifierI):
 
     def get_mode(self, votes):
         try:
-            print("The Mode = ", statistics.mode(votes))
+            print("Th¡e Mode = ", statistics.mode(votes))
             mode = statistics.mode(votes)
         except statistics.StatisticsError as e:
             print("There was an error with the statistics module")
