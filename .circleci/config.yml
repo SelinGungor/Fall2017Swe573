@@ -39,14 +39,10 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
+      - run:
+          name: Start Selenium
+          command: | pytest
+          
       - store_artifacts:
           path: test-reports
           destination: test-reports
-
-      test:
-          override:
-              - py.test
-
-      dependencies:
-          pre:
-             -  pip install pytest
