@@ -49,3 +49,9 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+deployment:
+  master:
+    branch: master
+    commands:
+      - echo 'deploying'
+      - ssh -v $DROPLET_USER@$DROPLET_IP "cd ~/mywell-server; ./circle_deployer.sh"
