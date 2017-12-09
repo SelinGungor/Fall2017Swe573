@@ -47,10 +47,26 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
-      - run:
-          command: |
-            docker build -t selingungor/deepyou .
-      - deploy:
-          command: |
-          - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-          - docker push selingungor/deepyou
+
+  deploy-job:
+    docker:
+      steps:
+        - run:
+            command: |
+              docker build -t selingungor/deepyou .
+        - deploy:
+            command: |
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            - docker push selingungor/deepyou
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-job:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
