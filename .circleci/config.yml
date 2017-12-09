@@ -48,9 +48,14 @@ jobs:
           path: test-reports
           destination: test-reports
 
-deployment:
-  master:
-    branch: master
-    commands:
-      - echo 'deploying'
-      - ssh -v $DROPLET_USER@$DROPLET_IP "python manage.py runserver"
+    dependencies:
+      override:
+        - docker info
+        - docker build -t selingungor/deepyou .
+
+    deployment:
+      hub:
+        branch: master
+        commands:
+          - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+          - docker push selingungor/deepyou
