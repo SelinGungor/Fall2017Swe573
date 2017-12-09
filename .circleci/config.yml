@@ -50,13 +50,13 @@ jobs:
 
   deploy-job:
     docker:
-      steps:
-        - run:
-            command: |
-              docker build -t selingungor/deepyou .
-        - deploy:
-            command: |
-              docker push selingungor/deepyou
+    steps:
+      - run:
+          command: |
+            docker build -t selingungor/deepyou .
+      - deploy:
+          command: |
+            docker push selingungor/deepyou
 
 workflows:
   version: 2
