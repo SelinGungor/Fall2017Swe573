@@ -56,8 +56,7 @@ jobs:
               docker build -t selingungor/deepyou .
         - deploy:
             command: |
-            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-            - docker push selingungor/deepyou
+              docker push selingungor/deepyou
 
 workflows:
   version: 2
