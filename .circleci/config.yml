@@ -47,15 +47,11 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
-
-  dependencies:
-      override:
-        - docker info
-        - docker build -t selingungor/deepyou .
-
-  deployment:
-      hub:
-        branch: master
-        commands:
+      - run:
+          name: build docker
+          command: |
+            docker build -t selingungor/deepyou .
+      - deploy:
+          command: | 
           - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
           - docker push selingungor/deepyou
