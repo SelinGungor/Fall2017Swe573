@@ -88,6 +88,6 @@ Project preperation for deployment
 Circle CI integration 
 
 ### Week 11
-Jenkins
-About page
-Contact page
+Jenkins    
+About page    
+Contact page    
