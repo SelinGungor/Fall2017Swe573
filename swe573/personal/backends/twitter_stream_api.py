@@ -1,7 +1,6 @@
 import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
-import MySQLdb
 import time
 import json
 import sentiment_mod as s
@@ -11,10 +10,6 @@ csecret = 'VH8mYzkEvPEqGNlZTZnFnq3WS1aO0VpVQWwq1mHNz9T82lUwEw'
 ckey = 'AoxuI3HzTsLzjVSdqfFHKMWCo'
 atoken = '747662208-qTHmkAmDK5SzV5cN4dh80JkjaRYerUcbQIrdpYqe'
 asecret = '8GHntLvtP88Yz7rsflSAz6cUHbSX1imeGQJXC6b1qzlXH'
-
-# #mysql connection
-# conn = MySQLdb.connect("selingungor.mysql.pythonanywhere-services.com", "selingungor", "MyDeepYouP@ss", "selingungor$deepyou")
-# connection = conn.cursor()
 
 class listener(tweepy.StreamListener):
     def on_data(self, data):

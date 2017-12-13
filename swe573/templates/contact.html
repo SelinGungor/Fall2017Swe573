@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Contact - {{ block.super }}{% endblock %}
+
+{% block content %}
+{{ form.media }}
+    <div class="row">
+
+            <div class="col-md-120">
+    <meta charset="UTF-8">
+<h1>Contact</h1>
+    <p>Hello {{ user.username }}!</p>
+                    {% csrf_token %}
+    <p><a href="/logout">Logout</a>
+</div>
+</div>
+If you would like to contact me, please email me --->
+selingungor01@gmail.com
+{% endblock %}

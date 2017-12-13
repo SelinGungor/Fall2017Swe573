@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from core import views as core_views
+from swe573 import views as swe573_views
+
 from personal import views as personal_views
 
 urlpatterns = [
@@ -26,6 +28,8 @@ urlpatterns = [
     url(r'^oauth/', include('social_django.urls', namespace='social')), #important for twitter login
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^contact/$', swe573_views.contact, name='contact_info'),
+    url(r'^about_deepyou/$', swe573_views.about_deepyou, name='about_deepyou'),
     #url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^settings/$', core_views.settings, name='settings'),
     url(r'^settings/password/$', core_views.password, name='password'),
