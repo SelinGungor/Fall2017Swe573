@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                docker run -it -p 8000:8000
+                sh "docker run -it -p 8000:8000"
             }
         }
     }
