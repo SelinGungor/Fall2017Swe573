@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                sh 'docker push'
+                sh 'docker run -d '
             }
         }
     }
