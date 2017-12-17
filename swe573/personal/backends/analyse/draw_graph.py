@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import personal.backends.analyse.sentiment_analysis as s
 from swe573 import settings
