@@ -12,14 +12,14 @@
     <p>Hello {{ user.username }}!</p>
     <p><a href="/logout">Logout</a>
 
-<form method="POST" enctype="application/x-www-form-urlencoded">
+<form id="form" method="POST" enctype="application/x-www-form-urlencoded"  onsubmit="return validateForm()">
     {% csrf_token %}
     {{ form.as_p }}
     {{ form.media }}
     {{ name_form.name.label_tag }}
     {{ name_form.name }}
     {{ name_form.name.errors }}
-    <button type="submit">Analyse</button>
+    <button id="analyse" type="submit">Analyse</button>
      <img src="img/hearts.svg" width=“40" alt="">
 </form>
                 <div class="col-md-120">
@@ -31,4 +31,14 @@
                 </div>
 </div>
 </div>
+   <script>
+
+    function validateForm() {
+        var validator = $("#form");
+        if (validator.valid()) {
+            $(".loader").show();
+        }
+    }
+    </script>
+
 {% endblock %}
