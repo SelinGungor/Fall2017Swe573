@@ -1,7 +1,6 @@
 import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
-import MySQLdb
 import time
 import json
 import datetime

@@ -30,7 +30,7 @@ LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
