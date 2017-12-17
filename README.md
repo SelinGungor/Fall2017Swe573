@@ -1,6 +1,6 @@
 ## Fall2017SWE573
 
-### Introduction
+### Introduction   
 
 Hello! This is Selin, the sailor and the engineer!   
 
