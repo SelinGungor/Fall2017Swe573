@@ -30,7 +30,7 @@ class DrawGraph(object):
         plt.title('DeepYou - Twitter Sentimental Profiling')
         plt.xlabel('Emotions')
         plt.ylabel('Number of Tweets')
-        plt.bar(range(len(emos)), emos.values(), align='center',color='r')
+        plt.bar(range(len(emos)), emos.values(), align='center',color='deeppink')
         plt.xticks(range(len(emos)), emos.keys())
         fig.savefig(settings.BASE_DIR + settings.STATIC_URL + '/deepyou.png')  # Use fig. here
         #plt.show(block=True)
