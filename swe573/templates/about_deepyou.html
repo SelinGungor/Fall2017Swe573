@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h1>About DeepYou</h1>
+<h1 style="color:#FF69B4;font-family:Georgia;" >About DeepYou</h1>
 {{ form.media }}
+<p style="color:#4B0082">
     <meta charset="UTF-8">
-DeepYou is a web application which analysis that specific user's historical emotional analysis based on his/her tweets in the past. To be able to use this application, the user should have Twitter account. After s/he is logged in to DeepYou using her/his Twitter account, s/he should select the date range using datepickers, s/he should see the her emotional anaysis between selected dates.
+<br style="text-align:left;">
+    DeepYou is a web application which analysis that specific user's historical emotional analysis based on his/her tweets in the past.</br>
+    To be able to use this application, the user should have Twitter account. After s/he is logged in to DeepYou using her/his Twitter account, </br>
+    s/he should select the date range using datepickers, s/he should see the her emotional anaysis between selected dates.</br>
+
+</p>
+  <br>
 {% endblock %}

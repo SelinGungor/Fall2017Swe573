@@ -8,12 +8,18 @@
 
             <div class="col-md-120">
     <meta charset="UTF-8">
-<h1>Contact</h1>
-    <p>Hello {{ user.username }}!</p>
+<h1 style="color:#FF69B4;font-family:Georgia;">Contact</h1>
+    <p style="color:#4B0082">Hello {{ user.username }}!</p>
                     {% csrf_token %}
     <p><a href="/logout">Logout</a>
 </div>
 </div>
-If you would like to contact me, please email me --->
-selingungor01@gmail.com
+<p style="color:#4B0082">
+    <meta charset="UTF-8">
+<br style="text-align:left;">
+    If you would like to contact me, please email me :</br>
+    selingungor01@gmail.com</br>
+</p>
+  <br>
+
 {% endblock %}
