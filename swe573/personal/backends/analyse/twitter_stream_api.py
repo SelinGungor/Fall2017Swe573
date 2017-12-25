@@ -21,7 +21,7 @@ class DeepYou(object):
     def __init__(self, username):
         self.username = username
 
-    def give_analyse_result(self):
+    def give_analyse_result(self, posts):
         auth = tweepy.OAuthHandler(ckey, csecret)
         auth.set_access_token(atoken, asecret)
 
@@ -29,15 +29,27 @@ class DeepYou(object):
         # my_tweets = twitterStream.filter(track=["a"], languages=["en"])
         emoemo = {}
         api = tweepy.API(auth)
+        start_date = posts[0].start_date
+        end_date = posts[0].end_date
+
+        print(start_date)
+        print(end_date)
         #get my tweets
         try:
             my_tweet_list = []
-            for status in tweepy.Cursor(api.user_timeline, screen_name=self.username, since='2016-08-01', until='2017-08-02').items():
+            for status in tweepy.Cursor(api.user_timeline, screen_name=self.username).items():
                 my_tweets = status._json['text']
-                my_tweet_list.append(my_tweets)
-                out = open('verizon_twitter_data.txt', 'a+')
-                my_tweets = my_tweets.encode('utf-8')
-                out.write(str(my_tweets) + "\n")
+                print(status._json['created_at'])
+                print(type(status._json['created_at']))
+                created_at = status._json['created_at']
+                created_at = created_at.split(' ')
+                created_at = ' '.join([created_at[1], created_at[2], created_at[-1]])
+                created_at = datetime.datetime.strptime(created_at, '%b %d %Y').date()
+                if created_at > start_date and created_at < end_date:
+                    my_tweet_list.append(my_tweets)
+                    out = open('verizon_twitter_data.txt', 'a+')
+                    my_tweets = my_tweets.encode('utf-8')
+                    out.write(str(my_tweets) + "\n")
             result = Result(my_tweet_list)
             my_emotions = result.analyse_emotions()
                 #print(my_tweet_list + " - " + my_emotions)

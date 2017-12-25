@@ -27,7 +27,10 @@
                 <p>From: {{ post.start_date|date:"M d, Y" }}</p>
                 <p>To: {{ post.end_date|date:"M d, Y" }}</p>
     {% endfor %}
-<img src="{{deep_you}}" width="600" height="450" title="Your twitter sentimental profiling graph">
+
+{% if deep_you != None %}
+                    <img src="{{deep_you}}" width="600" height="450" title="Your twitter sentimental profiling graph">
+{% endif %}
                 </div>
 </div>
 </div>

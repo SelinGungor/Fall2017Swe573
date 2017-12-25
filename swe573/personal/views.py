@@ -18,8 +18,8 @@ template_name = 'core/home.html'
 
 @login_required
 def analyse(request):
-    emotions = twitter_stream_api.DeepYou(request.user.username).give_analyse_result()
     posts = Post.objects.all()
+    emotions = twitter_stream_api.DeepYou(request.user.username).give_analyse_result(posts)
     form = HomeForm()
    ##  twitter_stream_api.Result.show_graph(emotions)
   #  image_data = open("deepyou.png", "rb").read()
