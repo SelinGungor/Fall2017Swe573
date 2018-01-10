@@ -6,6 +6,9 @@ Hello! This is Selin, the sailor and the engineer!
 
 I created this repository for Fall 2017 Swe573 course form Bogazici University
 
+DeepYou is running on:  
+http://188.226.188.55/  
+
 
 ### Week 1
 Please find the webserver-client documentation from the link below.
