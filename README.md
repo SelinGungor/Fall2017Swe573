@@ -4,7 +4,7 @@
 
 Hello! This is Selin, the sailor and the engineer!   
 
-I created this repository for Fall 2017 Swe573 course form Bogazici University
+I created this repository for Fall 2017 Swe573 course from Bogazici University
 
 DeepYou is running on:  
 http://188.226.188.55/  
